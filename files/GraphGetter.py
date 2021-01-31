@@ -12,9 +12,5 @@ class GraphGetter:
         file = File(name_file)
         while file.has_more_edges_to_add():
             current = file.get_edge()
-            adjacency = []
-            for i in current.second:
-                adjacency.append(int(i))
-            vertex = int(current.first)
-            graph.add_node(vertex, adjacency)
+            graph.add_node(current.first, current.second)
         return graph

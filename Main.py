@@ -1,8 +1,6 @@
 from algorithms.BFS import bfs
-from graph.Graph import Graph
 from files.GraphGetter import GraphGetter
 from graphics import *
-
 
 # def main():
 # win = GraphWin("Graphs PlayGround", 500, 500)
@@ -15,5 +13,5 @@ from graphics import *
 # main()
 
 graph = GraphGetter.get_graph_from_file()
-bfs_tree = bfs(graph, 1)
+bfs_tree = bfs(graph, "A")
 print("This is only for testing")

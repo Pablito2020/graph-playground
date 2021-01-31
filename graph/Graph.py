@@ -6,9 +6,9 @@ class Graph:
     def __init__(self):
         self.nodes = []
 
-    def add_node(self, num, list_adjacency):
-        self.add_if_not_exists(num)
-        node = self.get_node(num)
+    def add_node(self, value, list_adjacency):
+        self.add_if_not_exists(value)
+        node = self.get_node(value)
         for i in list_adjacency:
             self.add_if_not_exists(i)
             node2 = self.get_node(i)
@@ -19,8 +19,8 @@ class Graph:
         if node is None:
             self.nodes.append(Node(value))
 
-    def get_node(self, num):
+    def get_node(self, value):
         for node in self.nodes:
-            if node.value == num:
+            if node.value == value:
                 return node
         return None

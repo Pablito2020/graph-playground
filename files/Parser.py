@@ -1,4 +1,6 @@
+import re
 from files.Pairs import Pairs
+import string
 
 
 class Parser:
@@ -6,12 +8,12 @@ class Parser:
     @staticmethod
     def parse(text):
         result = []
-        vertex = text.split(";")
-        for i in vertex:
-            if len(i) > 0:  # TODO: Learn more about how the split method works
-                current = i.split("(")
-                actual_vertex = current[0]
-                actual_others = current[1].replace(")", "")
-                actual_final = actual_others.split(",")
-                result.append(Pairs(actual_vertex, actual_final))
+        vertex = text.split("|")
+        for i in range(len(vertex)):
+            vertex[i] = vertex[i].replace(" ", "")
+            vertex[i] = vertex[i].replace("\n", "")
+        for current in vertex:
+            final = current.split(":")
+            adjacency = final[1].split(",")
+            result.append(Pairs(final[0], adjacency))
         return result
