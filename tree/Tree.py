@@ -6,3 +6,6 @@ class Tree:
 
     def add_descendant(self, tree):
         self.descendants.append(tree)
+
+    def is_empty(self):
+        return len(self.descendants) == 0

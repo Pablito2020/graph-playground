@@ -1,14 +1,8 @@
-from algorithms.BFS import bfs
 from files.GraphGetter import GraphGetter
-from graphics import *
-from graphicsnode.Dimensions import Dimensions
-from graphicsnode.PaintGraph import PaintGraph
+from graphicsnode.ChoosePaint import ChoosePaint
 
-win = GraphWin("Graphs PlayGround", Dimensions.SCREEN_WIDTH.value, Dimensions.SCREEN_HEIGHT.value)
-
-# Graph and BFS of all vertices
+# Get graph from file
 graph = GraphGetter.get_graph_from_file()
-bfs_trees = []
-for i in graph.nodes:
-    bfs_trees.append(bfs(graph, i.value))
-PaintGraph.paint_graph(win, graph)
+
+# Show options and graph
+ChoosePaint.chooser(graph)

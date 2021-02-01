@@ -25,6 +25,12 @@ class Graph:
                 return node
         return None
 
+    def __contains__(self, item):
+        for node in self.nodes:
+            if node.value == item:
+                return True
+        return False
+
     def __str__(self):
         nodes = ""
         for node in self.nodes:

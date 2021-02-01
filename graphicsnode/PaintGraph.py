@@ -65,10 +65,6 @@ class PaintGraph:
     def get_result(first_point: NodeDraw, second_point: NodeDraw):
         center_first = first_point.circle.getCenter()
         center_second = second_point.circle.getCenter()
-        first_x = 0
-        final_x = 0
-        first_y = 0
-        final_y = 0
 
         if center_first.getX() < center_second.getX():
             first_x = center_first.getX() + Dimensions.CIRCLE_RADIUS.value
