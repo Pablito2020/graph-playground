@@ -1,6 +1,4 @@
-import re
-from files.Pairs import Pairs
-import string
+from structure.Pairs import Pairs
 
 
 class Parser:
