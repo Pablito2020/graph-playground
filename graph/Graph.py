@@ -24,3 +24,9 @@ class Graph:
             if node.value == value:
                 return node
         return None
+
+    def __str__(self):
+        nodes = ""
+        for node in self.nodes:
+            nodes += str(node) + "\n"
+        return nodes

@@ -11,4 +11,4 @@ graph = GraphGetter.get_graph_from_file()
 bfs_trees = []
 for i in graph.nodes:
     bfs_trees.append(bfs(graph, i.value))
-graph_painter = PaintGraph.paint_graph(win, graph)
+PaintGraph.paint_graph(win, graph)
