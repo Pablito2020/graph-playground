@@ -1,4 +1,3 @@
-from exceptions.NoElementInGraphException import no_node_in_graph_exception
 from graph.Graph import Graph
 from tree.Tree import Tree
 
@@ -10,8 +9,6 @@ def bfs(graph: Graph, value):
 
 def bfs_recursive(graph: Graph, value, visited_nodes):
     current_node = graph.get_node(value)
-    if current_node is None:
-        raise no_node_in_graph_exception()
     visited_nodes.append(value)
     tree = Tree(value)
     current = []

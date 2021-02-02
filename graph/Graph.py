@@ -1,4 +1,5 @@
 from graph.Node import Node
+from exceptions.NoElementInGraphException import NoNodeInGraphException
 
 
 class Graph:
@@ -15,15 +16,16 @@ class Graph:
             node.adjacent(node2)
 
     def add_if_not_exists(self, value):
-        node = self.get_node(value)
-        if node is None:
+        try:
+            node = self.get_node(value)
+        except NoNodeInGraphException as e:  # code to run if error occurs
             self.nodes.append(Node(value))
 
     def get_node(self, value):
         for node in self.nodes:
             if node.value == value:
                 return node
-        return None
+        raise NoNodeInGraphException()
 
     def __contains__(self, item):
         for node in self.nodes:
