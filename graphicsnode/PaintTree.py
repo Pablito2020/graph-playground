@@ -29,7 +29,7 @@ class PaintTree:
         # Draw lines to kids
 
         childs = PaintTree.get_no_visited_childs(tree, visited_nodes)
-        initial_point = Point(point.getX(), point.getY() + 2 * Dimensions.CIRCLE_RADIUS.value)
+        initial_point = Point(point.getX(), point.getY() + Dimensions.CIRCLE_RADIUS.value)
         y_kids = point.getY() + 4 * Dimensions.CIRCLE_RADIUS.value
         start_x = Dimensions.CIRCLE_RADIUS.value
         number_of_childs = len(childs)
@@ -39,17 +39,18 @@ class PaintTree:
             number_of_childs -= 1
             start_x *= 2
         while number_of_childs > 0:
-            line_1 = Line(initial_point, Point(point.getX() + start_x, y_kids))
-            line_2 = Line(initial_point, Point(point.getX() - start_x, y_kids))
+            line_1 = Line(initial_point, Point(point.getX() + start_x, y_kids - Dimensions.CIRCLE_RADIUS.value))
+            line_2 = Line(initial_point, Point(point.getX() - start_x, y_kids - Dimensions.CIRCLE_RADIUS.value))
             number_of_childs -= 2
             start_x = start_x + 2 * Dimensions.CIRCLE_RADIUS.value
             line_1.draw(win)
             line_2.draw(win)
         for i in childs:
             visited_nodes.append(i.root)
+        start = -start_x + 2 * Dimensions.CIRCLE_RADIUS.value
         for i in childs:
-            PaintTree.paint_tree_recursive(win, i, Point(point.getX() + start_x, y_kids), visited_nodes)
-            start_x -= 2 * Dimensions.CIRCLE_RADIUS.value
+            PaintTree.paint_tree_recursive(win, i, Point(point.getX() + start, y_kids), visited_nodes)
+            start += 2 * Dimensions.CIRCLE_RADIUS.value
 
     @staticmethod
     def get_no_visited_childs(tree, visited):
