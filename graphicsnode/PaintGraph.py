@@ -53,7 +53,6 @@ class PaintGraph:
             for i in node_draws:
                 if edge.first == i.value or edge.second == i.value:
                     nodes_adjacency.append(i)
-                    Line(Point(20, 30), Point(180, 165))
             result = PaintGraph.get_result(nodes_adjacency[0], nodes_adjacency[1])
             line = Line(result[0], result[1])
             line.draw(win)
@@ -66,20 +65,13 @@ class PaintGraph:
         center_first = first_point.circle.getCenter()
         center_second = second_point.circle.getCenter()
 
-        if center_first.getX() < center_second.getX():
-            first_x = center_first.getX() + Dimensions.CIRCLE_RADIUS.value
-            final_x = center_second.getX() - Dimensions.CIRCLE_RADIUS.value
-        else:
-            first_x = center_first.getX() - Dimensions.CIRCLE_RADIUS.value
-            final_x = center_second.getX() + Dimensions.CIRCLE_RADIUS.value
-
         if center_first.getY() < center_second.getY():
             first_y = center_first.getY() + Dimensions.CIRCLE_RADIUS.value
             final_y = center_second.getY() - Dimensions.CIRCLE_RADIUS.value
         else:
             first_y = center_first.getY() - Dimensions.CIRCLE_RADIUS.value
             final_y = center_second.getY() + Dimensions.CIRCLE_RADIUS.value
-        return [Point(first_x, first_y), Point(final_x, final_y)]
+        return [Point(center_first.getX(), first_y), Point(center_second.getX(), final_y)]
 
     @staticmethod
     def edge_exists(edge_list, pair: Pairs):
