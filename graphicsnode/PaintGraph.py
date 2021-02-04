@@ -1,5 +1,4 @@
 from graphicsnode.NodeDraw import NodeDraw
-from graphicsnode.Colors import Color
 from graphics import *
 from structure.Pairs import Pairs
 from graphicsnode.Dimensions import Dimensions
@@ -31,14 +30,14 @@ class PaintGraph:
                 y_point = (screen_height - 2 * circle_radius - safety + random_y) % (screen_height - 2 * circle_radius)
                 point = Point(x_point + circle_radius, y_point + circle_radius)
             point_history.append(point)
-            node_draws.append(NodeDraw((Circle(point, circle_radius)), Text(point, current_node.value), current_node.value))
+            node_draws.append(NodeDraw((Circle(point, circle_radius)), Text(point, current_node.value), current_node))
 
         # Add node draw objects to canvas
-        for graphic_node in node_draws:
-            graphic_node.circle.setFill(Color.RED.value)
-            graphic_node.circle.draw(win)
-            graphic_node.text.setTextColor(Color.BLACK.value)
-            graphic_node.text.draw(win)
+        for node in node_draws:
+            node.circle.setFill(node.value.color.value.first)
+            node.circle.draw(win)
+            node.text.setTextColor(node.value.color.value.second)
+            node.text.draw(win)
 
         # Get edges
         for current_node in graph.nodes:
@@ -51,7 +50,7 @@ class PaintGraph:
         for edge in edges:
             nodes_adjacency = []
             for i in node_draws:
-                if edge.first == i.value or edge.second == i.value:
+                if edge.first == i.value.value or edge.second == i.value.value:
                     nodes_adjacency.append(i)
             result = PaintGraph.get_result(nodes_adjacency[0], nodes_adjacency[1])
             line = Line(result[0], result[1])

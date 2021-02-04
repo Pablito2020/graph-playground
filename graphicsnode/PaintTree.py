@@ -1,5 +1,5 @@
 from tree.Tree import Tree
-from graphicsnode.Colors import Color
+from graph.Color import StockColor
 from graphicsnode.NodeDraw import NodeDraw
 from graphics import *
 from graphicsnode.Dimensions import Dimensions
@@ -16,14 +16,13 @@ class PaintTree:
         win.getMouse()
         win.close()
 
-    # TODO: The positions are currently broken
     @staticmethod
     def paint_tree_recursive(win, tree: Tree, point: Point, visited_nodes):
         # Draw root node
         graphic_node = NodeDraw(Circle(point, Dimensions.CIRCLE_RADIUS.value), Text(point, tree.root), tree.root)
-        graphic_node.circle.setFill(Color.RED.value)
+        graphic_node.circle.setFill(StockColor.NULL_COLOR.value.first)
         graphic_node.circle.draw(win)
-        graphic_node.text.setTextColor(Color.BLACK.value)
+        graphic_node.text.setTextColor(StockColor.NULL_COLOR.value.second)
         graphic_node.text.draw(win)
 
         # Draw lines to kids
