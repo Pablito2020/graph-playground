@@ -21,5 +21,21 @@ class Tree:
             if current is not None:
                 return current
 
-    def is_empty(self):
+    def no_descendants(self):
         return len(self.descendants) == 0
+
+    def height(self):
+        return self.height_recursive(self, [])
+
+    def height_recursive(self, tree, visited):
+        if tree.no_descendants():
+            return 1
+        if tree.root in visited:
+            return 0
+        visited.append(tree.root)
+        counter = []
+        for i in tree.descendants:
+            counter.append(self.height_recursive(i, visited))
+        height = max(counter)
+        return height + 1
+
