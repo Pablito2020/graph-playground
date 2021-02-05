@@ -17,8 +17,8 @@ class Graph:
 
     def add_if_not_exists(self, value):
         try:
-            node = self.get_node(value)
-        except NoNodeInGraphException as e:  # code to run if error occurs
+            self.get_node(value)
+        except NoNodeInGraphException as e:
             self.nodes.append(Node(value))
 
     def get_node(self, value):

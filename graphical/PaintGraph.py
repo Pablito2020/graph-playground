@@ -43,7 +43,7 @@ class PaintGraph:
         for current_node in graph.nodes:
             for adjacent in current_node.adjacent_nodes:
                 current_pair = Pairs(current_node.value, adjacent.value)
-                if not PaintGraph.edge_exists(edges, current_pair):
+                if not PaintGraph.__edge_exists(edges, current_pair):
                     edges.append(current_pair)
 
         # Add edges to canvas
@@ -52,7 +52,7 @@ class PaintGraph:
             for i in node_draws:
                 if edge.first == i.value.value or edge.second == i.value.value:
                     nodes_adjacency.append(i)
-            result = PaintGraph.get_result(nodes_adjacency[0], nodes_adjacency[1])
+            result = PaintGraph.__get_result(nodes_adjacency[0], nodes_adjacency[1])
             line = Line(result[0], result[1])
             line.draw(win)
 
@@ -60,7 +60,7 @@ class PaintGraph:
         win.close()
 
     @staticmethod
-    def get_result(first_point: NodeDraw, second_point: NodeDraw):
+    def __get_result(first_point: NodeDraw, second_point: NodeDraw):
         center_first = first_point.circle.getCenter()
         center_second = second_point.circle.getCenter()
 
@@ -73,13 +73,13 @@ class PaintGraph:
         return [Point(center_first.getX(), first_y), Point(center_second.getX(), final_y)]
 
     @staticmethod
-    def edge_exists(edge_list, pair: Pairs):
+    def __edge_exists(edge_list, pair: Pairs):
         for edge in edge_list:
-            if PaintGraph.equals_edge(edge, pair):
+            if PaintGraph.__equals_edge(edge, pair):
                 return True
         return False
 
     @staticmethod
-    def equals_edge(current_edge: Pairs, edge: Pairs):
+    def __equals_edge(current_edge: Pairs, edge: Pairs):
         return (current_edge.first == edge.first and current_edge.second == edge.second) or (
                 current_edge.second == edge.first and current_edge.first == edge.second)

@@ -13,8 +13,8 @@ def dfs(graph: Graph, value):
     stack.append(Pairs(node, tree))
     while stack:
         current_element = stack.pop()
-        if has_valid_descendant(current_element.first, visited):
-            element = get_valid_descendant(current_element.first, visited)
+        if __has_valid_descendant(current_element.first, visited):
+            element = __get_valid_descendant(current_element.first, visited)
             new_tree = Tree(element.value)
             current_element.second.add_descendant(new_tree)
             visited.append(element.value)
@@ -24,11 +24,11 @@ def dfs(graph: Graph, value):
     return tree
 
 
-def has_valid_descendant(node, visited):
-    return get_valid_descendant(node, visited) is not None
+def __has_valid_descendant(node, visited):
+    return __get_valid_descendant(node, visited) is not None
 
 
-def get_valid_descendant(node, visited):
+def __get_valid_descendant(node, visited):
     for i in node.adjacent_nodes:
         counter = 0
         for j in visited:
