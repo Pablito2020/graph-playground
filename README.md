@@ -11,7 +11,7 @@ This project arises from the idea of starting to learn python and improve my kno
 
 ### How to install and use:
     
-    1. Install graphics.py dependency:
+    1. Install graphics.py:
 
         $ pip install graphics.py
 
@@ -19,15 +19,16 @@ This project arises from the idea of starting to learn python and improve my kno
 
     3. Execute the program:
 
-        $ python main.py
+        $ python GraphPlayground.py
 
 #### File Format for representing the graph:
 First, you have to specify the graph you want to analyze inside the graph.txt file. The format of this file has to be the adjacency list of the graph following this format:
 
 ```
-VERTEX: ADJACENT1, ADJACENT2, ADJACENT2 |
+VERTEX1: ADJACENT1, ADJACENT2, ADJACENT2 |
+VERTEX2: ADJACENT1, ADJACENT2, ADJACENT2 |
 .......
-FINAL_VERTEX: ADJACENT1, ADJACENT2 |
+VERTEXN: ADJACENT1, ADJACENT2
 ```
 
 For example, this lines represents the graph cycle of 4 vertex:
@@ -39,20 +40,16 @@ C: B, D|
 D: A, C
 ```
 
-#### Showing the results on screen:
+Once the file is configured, we can see graphically the graph and even the result of applying certain algorithms on it (such as BFS, DFS and GreedyColoring). Following the example of the cycle graph:
 
-Once you have the correct syntax, the program will ask if you want to show the graph (pressing g or G) or apply BSF to any of its vertices (pressing b or B and specifying the vertex). Continuing with the example of the cycle graph:
+#### Representation of Graph Cycle (4)
+![graph_cycle_4_final](https://user-images.githubusercontent.com/18640261/107013253-6ad68400-679a-11eb-9963-030f5ee7ba4a.png)
 
-Following the example, the output when you press g or G would be the graph cycle of 4 vertex (the representation may vary because its representation is chosen randomly):
+#### BFS from A
+![bfs_A_graph_cycle_4](https://user-images.githubusercontent.com/18640261/107013248-69a55700-679a-11eb-9057-d82a5ba30859.png)
 
-<p align="center">
-  <img src="https://user-images.githubusercontent.com/18640261/106574937-cbb45100-653b-11eb-8fdb-8bec8a8ebc51.png" alt="graph cycle 4 vertex">
-</p>
+#### DFS from A
+![dfs_A_graph_cycle_4](https://user-images.githubusercontent.com/18640261/107013251-6ad68400-679a-11eb-8964-41aa01747d6e.png)
 
-
-the output of applying bfs to vertex A in the cycle graph would be the following spanning tree:
-
-<p align="center">
-  <img src="https://user-images.githubusercontent.com/18640261/106574934-ca832400-653b-11eb-9b14-073e4e631d8a.png" alt="BFS(cycle_4, A)">
-</p>
-
+#### Greedy Coloring Algorithm from A
+![greedy_coloring_graph_cycle_4](https://user-images.githubusercontent.com/18640261/107013256-6b6f1a80-679a-11eb-81be-4414e1f5550e.png)
