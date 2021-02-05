@@ -1,8 +1,8 @@
-from graphicsnode.NodeDraw import NodeDraw
+from graphical.NodeDraw import NodeDraw
 from graphics import *
 from structure.Pairs import Pairs
-from graphicsnode.Dimensions import Dimensions
-from graphicsnode.PositionChecker import PositionChecker
+from graphical.Dimensions import Dimensions
+from graphical.PositionChecker import PositionChecker
 import random
 
 circle_radius = Dimensions.CIRCLE_RADIUS.value

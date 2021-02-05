@@ -1,6 +1,6 @@
 from graphics import *
 
-from graphicsnode.Dimensions import Dimensions
+from graphical.Dimensions import Dimensions
 
 
 class PositionChecker:

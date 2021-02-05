@@ -1,4 +1,4 @@
-from graph.Graph import Graph
+from structure.Graph import Graph
 from files.File import File
 
 name_file = "graph.txt"

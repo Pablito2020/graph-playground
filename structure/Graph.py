@@ -1,4 +1,4 @@
-from graph.Node import Node
+from structure.Node import Node
 from exceptions.NoElementInGraphException import NoNodeInGraphException
 
 

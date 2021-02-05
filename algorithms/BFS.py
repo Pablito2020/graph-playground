@@ -1,5 +1,5 @@
-from graph.Graph import Graph
-from tree.Tree import Tree
+from structure.Graph import Graph
+from structure.Tree import Tree
 from structure.Pairs import Pairs
 
 

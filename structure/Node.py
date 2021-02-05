@@ -1,4 +1,4 @@
-from graph.Color import StockColor
+from colors.Color import StockColor
 
 
 class Node:

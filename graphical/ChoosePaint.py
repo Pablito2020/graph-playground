@@ -2,10 +2,10 @@ from graphics import *
 
 from algorithms.BFS import bfs
 from algorithms.DFS import dfs
-from graphicsnode.PaintGraph import PaintGraph
-from graph.Graph import Graph
-from graphicsnode.Dimensions import Dimensions
-from graphicsnode.PaintTree import PaintTree
+from graphical.PaintGraph import PaintGraph
+from structure.Graph import Graph
+from graphical.Dimensions import Dimensions
+from graphical.PaintTree import PaintTree
 from algorithms.GreedyColoring import greedy_coloring
 
 

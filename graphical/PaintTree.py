@@ -1,8 +1,8 @@
-from tree.Tree import Tree
-from graph.Color import StockColor
-from graphicsnode.NodeDraw import NodeDraw
+from structure.Tree import Tree
+from colors.Color import StockColor
+from graphical.NodeDraw import NodeDraw
 from graphics import *
-from graphicsnode.Dimensions import Dimensions
+from graphical.Dimensions import Dimensions
 
 
 class PaintTree:

@@ -1,5 +1,5 @@
 from files.GraphGetter import GraphGetter
-from graphicsnode.ChoosePaint import ChoosePaint
+from graphical.ChoosePaint import ChoosePaint
 
 # Get graph from file
 graph = GraphGetter.get_graph_from_file()

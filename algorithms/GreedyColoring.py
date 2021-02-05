@@ -1,6 +1,6 @@
-from graph.Graph import Graph
-from graph.Node import Node
-from graph.Color import ColorPair
+from structure.Graph import Graph
+from structure.Node import Node
+from colors.Color import ColorPair
 from exceptions.NoMoreColorsException import NoMoreColorsException
 
 
