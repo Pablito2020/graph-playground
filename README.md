@@ -25,8 +25,8 @@ This project arises from the idea of starting to learn python and improve my kno
 First, you have to specify the graph you want to analyze inside the graph.txt file. The format of this file has to be the adjacency list of the graph following this format:
 
 ```
-VERTEX1: ADJACENT1, ADJACENT2, ADJACENT2 |
-VERTEX2: ADJACENT1, ADJACENT2, ADJACENT2 |
+VERTEX1: ADJACENT1, ADJACENT2, ADJACENT3, .... , ADJACENTN | 
+VERTEX2: ADJACENT1, ADJACENT2, ... , ADJACENTN |
 .......
 VERTEXN: ADJACENT1, ADJACENT2
 ```
